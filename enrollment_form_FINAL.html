@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基礎手技線上陪跑班｜報名資料表</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif; background: #F1EFE8; min-height: 100vh; padding: 2rem 1rem 3rem; color: #2C2C2A; }
+.form-wrap { max-width: 640px; margin: 0 auto; }
+.form-header { background: #2C2C2A; border-radius: 14px; padding: 1.75rem 2rem; margin-bottom: 1.25rem; }
+.form-header h1 { font-size: 20px; font-weight: 500; color: #FAF8F3; margin-bottom: 6px; line-height: 1.4; }
+.form-header p { font-size: 13px; color: #888780; line-height: 1.7; }
+.form-header .brand { font-size: 11px; color: #BA7517; margin-top: 12px; letter-spacing: 0.03em; }
+.section { background: #FFFFFF; border: 0.5px solid #D3D1C7; border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+.section-title { font-size: 12px; font-weight: 500; color: #BA7517; margin-bottom: 1.1rem; padding-bottom: 10px; border-bottom: 0.5px solid #D3D1C7; letter-spacing: 0.06em; text-transform: uppercase; }
+.field { margin-bottom: 1.1rem; }
+.field:last-child { margin-bottom: 0; }
+label.field-label { display: block; font-size: 13px; font-weight: 500; color: #2C2C2A; margin-bottom: 7px; }
+.req { color: #D85A30; margin-left: 2px; }
+.hint { font-size: 11px; font-weight: 400; color: #888780; margin-left: 4px; }
+input[type=text], input[type=tel], input[type=email], textarea, select {
+  width: 100%; font-size: 14px; color: #2C2C2A;
+  background: #FAF8F3; border: 0.5px solid #B4B2A9;
+  border-radius: 8px; padding: 9px 13px; outline: none;
+  font-family: inherit; transition: border-color 0.15s;
+}
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, textarea:focus, select:focus {
+  border-color: #BA7517; box-shadow: 0 0 0 3px rgba(186,117,23,0.12);
+}
+textarea { resize: vertical; min-height: 84px; line-height: 1.65; }
+select { height: 38px; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
+.radio-group, .check-group { display: flex; flex-direction: column; gap: 7px; }
+.option-item { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; padding: 9px 13px; border-radius: 8px; border: 0.5px solid #D3D1C7; transition: all 0.1s; user-select: none; }
+.option-item:hover { background: #FAF8F3; border-color: #B4B2A9; }
+.option-item input[type=radio], .option-item input[type=checkbox] { accent-color: #BA7517; width: 15px; height: 15px; flex-shrink: 0; margin-top: 1px; cursor: pointer; }
+.option-item span { font-size: 13px; color: #2C2C2A; line-height: 1.5; }
+.option-item.selected { background: #FAF8F3; border-color: #BA7517; }
+.option-item.checked { background: #FAF8F3; border-color: #BA7517; }
+.payment-card { border: 0.5px solid #D3D1C7; border-radius: 8px; padding: 13px 15px; cursor: pointer; transition: all 0.1s; }
+.payment-card:hover { background: #FAF8F3; }
+.payment-card.selected { border-color: #BA7517; background: #FAF8F3; }
+.p-title { font-size: 13px; font-weight: 500; color: #2C2C2A; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.p-desc { font-size: 12px; color: #5F5E5A; margin-top: 5px; line-height: 1.65; }
+.p-price { font-size: 13px; font-weight: 500; color: #BA7517; margin-top: 7px; }
+.badge { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 400; }
+.badge-green { background: #EAF3DE; color: #27500A; }
+.badge-amber { background: #FAEEDA; color: #633806; }
+.note-box { background: #FAF8F3; border: 0.5px solid #D3D1C7; border-radius: 8px; padding: 11px 14px; font-size: 12px; color: #5F5E5A; line-height: 1.7; margin-top: 12px; }
+.divider { height: 0.5px; background: #D3D1C7; margin: 14px 0; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; background: #FAEEDA; color: #633806; margin-left: 8px; vertical-align: middle; }
+.info-box { background: #FAF8F3; border: 0.5px solid #D3D1C7; border-radius: 10px; padding: 14px 16px; font-size: 12px; color: #5F5E5A; line-height: 1.8; margin-bottom: 1rem; }
+.submit-btn { width: 100%; padding: 14px; background: #2C2C2A; color: #FAF8F3; font-size: 15px; font-weight: 500; border: none; border-radius: 10px; cursor: pointer; font-family: inherit; transition: opacity 0.15s; letter-spacing: 0.02em; }
+.submit-btn:hover { opacity: 0.85; }
+.submit-btn:active { transform: scale(0.99); }
+.success-msg { display: none; background: #EAF3DE; border: 0.5px solid #97C459; border-radius: 10px; padding: 1.5rem; text-align: center; margin-top: 1rem; }
+.success-msg h2 { font-size: 16px; font-weight: 500; color: #27500A; margin-bottom: 6px; }
+.success-msg p { font-size: 13px; color: #3B6D11; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="form-wrap">
+  <div class="form-header">
+    <h1>基礎手技線上陪跑班<br>報名資料表</h1>
+    <p>請如實填寫，這份資料幫助我在課程開始前了解你的狀況，提供更精準的指導。</p>
+    <div class="brand">Miranda's Method  Hands Of Impact™　·　2026 年 5 月開課　·　5 人小班</div>
+  </div>
+
+  <form id="enrollForm" action="https://formspree.io/f/mgopjvpz" method="POST">
+
+    <input type="hidden" name="_subject" value="【陪跑班報名】新報名資料表">
+    <input type="hidden" name="_next" value="">
+
+    <div class="section">
+      <div class="section-title">一、基本資料</div>
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label">姓名 <span class="req">*</span></label>
+          <input type="text" name="姓名" placeholder="你的真實姓名" required>
+        </div>
+        <div class="field">
+          <label class="field-label">稱呼 <span class="hint">（選填）</span></label>
+          <input type="text" name="稱呼" placeholder="例：小美、Amy">
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label">聯絡電話 <span class="req">*</span></label>
+          <input type="tel" name="聯絡電話" placeholder="09xxxxxxxx" required>
+        </div>
+        <div class="field">
+          <label class="field-label">LINE ID <span class="req">*</span></label>
+          <input type="text" name="LINE ID" placeholder="你的 LINE ID" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">所在縣市 <span class="req">*</span></label>
+        <select name="所在縣市" required>
+          <option value="">請選擇</option>
+          <option>台北市</option><option>新北市</option><option>桃園市</option><option>台中市</option>
+          <option>台南市</option><option>高雄市</option><option>基隆市</option><option>新竹市</option>
+          <option>新竹縣</option><option>苗栗縣</option><option>彰化縣</option><option>南投縣</option>
+          <option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>屏東縣</option>
+          <option>宜蘭縣</option><option>花蓮縣</option><option>台東縣</option><option>澎湖縣</option>
+          <option>海外（台灣以外）</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">二、技術背景</div>
+      <div class="field">
+        <label class="field-label">目前的身份 <span class="req">*</span></label>
+        <div class="radio-group">
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="目前身份" value="執業中的按摩師" required> <span>執業中的按摩師</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="目前身份" value="執業中的芳療師"> <span>執業中的芳療師</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="目前身份" value="美容／美體相關從業者"> <span>美容 / 美體相關從業者</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="目前身份" value="正在學習中，尚未執業"> <span>正在學習中，尚未執業</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="目前身份" value="準備入行，目前還在評估"> <span>準備入行，目前還在評估</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">主要技術類別 <span class="hint">（可複選）</span></label>
+        <div class="check-group">
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="瑞典式按摩／全身油壓"> <span>瑞典式按摩 / 全身油壓</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="運動按摩／深層組織"> <span>運動按摩 / 深層組織</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="芳香療法／精油按摩"> <span>芳香療法 / 精油按摩</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="泰式按摩"> <span>泰式按摩</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="指壓／穴位按摩"> <span>指壓 / 穴位按摩</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="頭薦骨／能量療法"> <span>頭薦骨 / 能量療法</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="美容／臉部護理"> <span>美容 / 臉部護理</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="技術類別" value="尚在學習中，技術類別未定"> <span>尚在學習中，技術類別未定</span></label>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label">從業 / 學習年資 <span class="req">*</span></label>
+          <select name="從業年資" required>
+            <option value="">請選擇</option>
+            <option>尚未開始（準備入行）</option>
+            <option>學習中（未滿 1 年）</option>
+            <option>1–2 年</option>
+            <option>3–5 年</option>
+            <option>6–10 年</option>
+            <option>10 年以上</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">工作型態 <span class="req">*</span></label>
+          <select name="工作型態" required>
+            <option value="">請選擇</option>
+            <option>店家受僱員工</option>
+            <option>自行創業（獨立工作室）</option>
+            <option>自由接案（到府／外接）</option>
+            <option>兼職 / 副業</option>
+            <option>尚未執業</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三、身體狀況與問題</div>
+      <div class="field">
+        <label class="field-label">目前身體是否有以下狀況？<span class="hint">（可複選）</span></label>
+        <div class="check-group">
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="手指／手腕疼痛或發炎"> <span>手指 / 手腕疼痛或發炎</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="肩頸長期緊繃或痠痛"> <span>肩頸長期緊繃或痠痛</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="腰背痠痛或有受傷史"> <span>腰背痠痛或有受傷史</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="手肘／手臂疲勞感明顯"> <span>手肘 / 手臂疲勞感明顯</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="工作後需要很長時間才能恢復體力"> <span>工作後需要很長時間才能恢復體力</span></label>
+          <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="身體狀況" value="目前身體狀況良好，以預防為主"> <span>目前身體狀況良好，以預防為主</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">在技術上你最想改善的問題是什麼？<span class="req">*</span></label>
+        <textarea name="想改善的問題" placeholder="例如：力道出不來、做完很累、手法不流暢、不知道怎麼發力……用你自己的話寫就好。" required></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label">你目前最不確定自己「做對了沒有」的動作或部位？<span class="hint">（選填）</span></label>
+        <textarea name="不確定的動作" placeholder="例如：手肘的施力方式、拱腰還是挺腰、拇指的角度……" style="min-height:68px;"></textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四、課程設備確認</div>
+      <div class="field">
+        <label class="field-label">你是否備有按摩床？<span class="req">*</span></label>
+        <div class="radio-group">
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="按摩床狀況" value="有，高度可調整" required> <span>有，高度可調整</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="按摩床狀況" value="有，但高度固定"> <span>有，但高度固定</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="按摩床狀況" value="目前沒有，正在安排"> <span>目前沒有，正在安排</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="按摩床狀況" value="沒有，需要協助建議"> <span>沒有，需要協助建議</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">線上課期間是否能安排模特兒配合練習？<span class="req">*</span></label>
+        <div class="radio-group">
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="模特兒安排" value="可以，已有人選" required> <span>可以，已有人選（家人 / 朋友 / 同事）</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="模特兒安排" value="需要再安排，目前還在確認"> <span>需要再安排，目前還在確認</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="模特兒安排" value="目前沒有合適人選"> <span>目前沒有合適人選</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">五、繳費方式 <span class="tag">NT$35,000</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px;" id="payment-group">
+        <div class="payment-card" onclick="selectPayment(this,'一次付清 NT$35,000')">
+          <div class="p-title">一次付清 <span class="badge badge-green">最簡單</span></div>
+          <div class="p-desc">匯款或刷卡，報名確認後 3 天內完成繳費</div>
+          <div class="p-price">NT$35,000</div>
+        </div>
+        <div class="payment-card" onclick="selectPayment(this,'和潤零卡 6 期零利率，每期 NT$5,834')">
+          <div class="p-title">和潤零卡 6 期零利率 <span class="badge badge-green">零利率</span></div>
+          <div class="p-desc">透過和潤零卡分期，共 6 期，零利率，無額外費用</div>
+          <div class="p-price">每期 NT$5,834 × 6 期</div>
+        </div>
+        <div class="payment-card" onclick="selectPayment(this,'和潤零卡 9 期低利率，每期約 NT$3,889 起')">
+          <div class="p-title">和潤零卡 9 期低利率 <span class="badge badge-amber">低利率</span></div>
+          <div class="p-desc">透過和潤零卡分期，共 9 期，依和潤當期利率計算，總金額略高於原價，詳細費用報名後另行確認</div>
+          <div class="p-price">每期約 NT$3,889 起（依利率調整）</div>
+        </div>
+        <div class="payment-card" onclick="selectPayment(this,'和潤零卡 12 期低利率，每期約 NT$2,917 起')">
+          <div class="p-title">和潤零卡 12 期低利率 <span class="badge badge-amber">低利率</span></div>
+          <div class="p-desc">透過和潤零卡分期，共 12 期，依和潤當期利率計算，總金額略高於原價，詳細費用報名後另行確認</div>
+          <div class="p-price">每期約 NT$2,917 起（依利率調整）</div>
+        </div>
+      </div>
+      <input type="hidden" name="繳費方式" id="payment-hidden" required>
+      <div class="note-box">低利率分期（9 期 / 12 期）的實際每期金額與總費用，會在報名確認後依和潤當期利率另行通知。</div>
+      <div class="divider"></div>
+      <div class="field" style="margin-top:4px;">
+        <label class="field-label">繳費備註 <span class="hint">（選填）</span></label>
+        <input type="text" name="繳費備註" placeholder="例：想先確認和潤零卡申請資格……">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">六、其他</div>
+      <div class="field">
+        <label class="field-label">你是從哪裡知道這堂課的？<span class="req">*</span></label>
+        <div class="radio-group">
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="Instagram" required> <span>Instagram</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="Facebook"> <span>Facebook</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="直播（Zoom）"> <span>直播（Zoom）</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="朋友／同業介紹"> <span>朋友 / 同業介紹</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="Podcast"> <span>Podcast</span></label>
+          <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="來源管道" value="其他"> <span>其他</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">有什麼想在課程開始前讓我知道的？<span class="hint">（選填）</span></label>
+        <textarea name="其他備註" placeholder="特殊狀況、時間限制、想問的問題……都可以寫在這裡。" style="min-height:68px;"></textarea>
+      </div>
+    </div>
+
+    <div class="info-box">
+      填寫完成後按下送出，資料會直接傳送給 Miranda。我會在 24 小時內確認收到並與你聯繫後續繳費流程。名額以繳費完成為準，共 5 個名額。
+    </div>
+
+    <button type="submit" class="submit-btn">送出報名資料</button>
+
+    <div class="success-msg" id="successMsg">
+      <h2>資料已成功送出！</h2>
+      <p>Miranda 會在 24 小時內透過 LINE 與你聯繫。<br>請確認你的 LINE 可以接收陌生訊息。</p>
+    </div>
+  </form>
+</div>
+
+<script>
+function selectRadio(el) {
+  var group = el.closest('.radio-group');
+  if (group) group.querySelectorAll('.option-item').forEach(function(i){ i.classList.remove('selected'); });
+  el.classList.add('selected');
+}
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+}
+function selectPayment(el, val) {
+  document.querySelectorAll('#payment-group .payment-card').forEach(function(c){ c.classList.remove('selected'); });
+  el.classList.add('selected');
+  document.getElementById('payment-hidden').value = val;
+}
+document.getElementById('enrollForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var payVal = document.getElementById('payment-hidden').value;
+  if (!payVal) { alert('請選擇繳費方式'); return; }
+  var form = this;
+  var btn = form.querySelector('.submit-btn');
+  btn.textContent = '送出中…';
+  btn.disabled = true;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(res) {
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    } else {
+      alert('送出失敗，請稍後再試或直接透過 LINE 聯絡 Miranda。');
+      btn.textContent = '送出報名資料';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    alert('網路連線問題，請稍後再試。');
+    btn.textContent = '送出報名資料';
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>
